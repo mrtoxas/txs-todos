@@ -5,15 +5,13 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { AppThemeProvider } from './theme/theme';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <AppThemeProvider>
-      <App/>
+      <App />
     </AppThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 serviceWorkerRegistration.register();

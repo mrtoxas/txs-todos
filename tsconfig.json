@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "rootDir": "./",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "indent": [true, "tabs", 2],
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,9 +16,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "extends": ["airbnb", "airbnb-typescript"],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

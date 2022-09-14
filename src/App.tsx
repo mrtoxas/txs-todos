@@ -1,10 +1,10 @@
 import React from 'react';
-import {Header} from "./components/header/header";
-import styled from "styled-components";
+import { Header } from './components/header/header';
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: ${({theme}) => theme.colors.background};
-`
+  background-color: ${({ theme }) => theme.colors.background};
+`;
 
 function App() {
   return (

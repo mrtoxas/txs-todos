@@ -1,22 +1,22 @@
-import {createGlobalStyle} from "styled-components";
-import {normalize} from "styled-normalize";
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 
 export const GlobalStyles = createGlobalStyle`
   ${normalize};
 `;
 
 export const lightTheme = {
-  name: "light-theme",
+  name: 'light-theme',
   colors: {
-    text: "#000000",
-    background: '#FFFFFF'
+    text: '#000000',
+    background: '#FFFFFF',
   },
 };
 
 export const darkTheme = {
-  name: "dark-theme",
+  name: 'dark-theme',
   colors: {
-    text: "#FFFFFF",
+    text: '#FFFFFF',
     background: '#202124',
   },
 };

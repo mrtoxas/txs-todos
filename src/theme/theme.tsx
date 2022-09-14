@@ -1,15 +1,16 @@
-import {createContext, useContext, useState} from "react";
-import { ThemeProvider } from "styled-components";
-import {darkTheme, GlobalStyles, lightTheme} from "./themes";
-import type {ThemeContext, ThemeProviderProps} from "./types";
-import {Mode} from './types';
+import React, { createContext, useContext, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme, GlobalStyles, lightTheme } from './themes';
+import type { ThemeContext, ThemeProviderProps } from './types';
+import { Mode } from './types';
 
 const AppThemeContext = createContext<ThemeContext>({
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   changeMode: () => {},
-  mode: Mode.Light
+  mode: Mode.Light,
 });
 
-export const AppThemeProvider = ({children}: ThemeProviderProps) => {
+export function AppThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState(lightTheme);
 
   const [mode, setMode] = useState<Mode>(() => {
@@ -19,7 +20,7 @@ export const AppThemeProvider = ({children}: ThemeProviderProps) => {
       return modeInStorage === Mode.Light ? Mode.Light : Mode.Dark;
     }
 
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setTheme(systemTheme ? darkTheme : lightTheme);
     return systemTheme ? Mode.Dark : Mode.Light;
   });
@@ -31,13 +32,13 @@ export const AppThemeProvider = ({children}: ThemeProviderProps) => {
   };
 
   return (
-    <AppThemeContext.Provider value={{mode, changeMode}}>
+    <AppThemeContext.Provider value={{ mode, changeMode }}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         {children}
       </ThemeProvider>
     </AppThemeContext.Provider>
-  )
+  );
 }
 
 export const useThemeContext = () => useContext(AppThemeContext);
