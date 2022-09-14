@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 export enum Mode {
-  Light = "Light",
-  Dark = "Dark"
+  Light = 'Light',
+  Dark = 'Dark',
 }
 
 export interface ThemeProviderProps {
